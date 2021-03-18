@@ -34,7 +34,26 @@ knitr::opts_chunk$set(echo = FALSE)
 ![](/Users/cora/git_repos/GitHubPrez/RS/gitdiff.png)
 
 ## Getting Up to Date: Commit, Push, and You're Set!
-![](/Users/cora/git_repos/GitHubPrez/RS/uptodate.png)
+::: columns
+
+:::: column
+Step 0: When collaborating, always pull before making changes!
+
+Step 1: Stage Changes
+![](/Users/cora/git_repos/GitHubPrez/RS/stage_changes.png)
+::::
+
+:::: column
+Step 2: Commit Changes
+[](/Users/cora/git_repos/GitHubPrez/RS/create_commit.png)
+::::
+
+:::: column
+Step 3: Push Changes
+[](/Users/cora/git_repos/GitHubPrez/RS/push_changes.png)
+::::
+
+:::
 
 ## Wait, when did I make that change? Git History
 ![](/Users/cora/git_repos/GitHubPrez/RS/git_history.png)
