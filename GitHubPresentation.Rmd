@@ -1,0 +1,36 @@
+---
+title: "GitHub Presentation"
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Outline
+
+- GitHub: why use it?
+- cool features
+- connect with RStudio project
+- collaborating on GitHub
+- Berry Consultants GitHub Organization
+
+## Using GitHub through RStudio
+
+
+## Berry Consultants GitHub Organization
+- A free option, GitHub Free, with unlimited collaborators on unlimited public repositories with full features and unlimited private repositories with limited features.
+- The option to upgrade to GitHub Team or GitHub Enterprise Cloud for additional features, including sophisticated user authentication and management, and escalated support options. For more information, see "GitHub's products."
+- Unlimited membership with a variety of roles that grant different levels of access to the organization and its data
+- The ability to give members a range of access permissions to your organization's repositories
+- Nested teams that reflect your company or group's structure with cascading access permissions and mentions
+- The ability for organization owners to view members' two-factor authentication (2FA) status
+- The option to require all organization members to use two-factor authentication
+- The option to purchase a license for GitHub Advanced Security and use the features on private repositories.
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
