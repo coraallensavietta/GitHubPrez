@@ -52,12 +52,12 @@ knitr::opts_chunk$set(echo = FALSE)
 ::: columns
 
 :::: column
-![](/Users/cora/git_repos/GitHubPrez/RS/fromterminal.png){width=120%}
+![](/Users/cora/git_repos/GitHubPrez/RS/fromterminal.png){width=110%}
 
 ::::
 
 :::: column
-![](/Users/cora/git_repos/GitHubPrez/RS/desktop.png){width=100%}
+![](/Users/cora/git_repos/GitHubPrez/RS/desktop.png){width=95%}
 
 ::::
 
