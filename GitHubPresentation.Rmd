@@ -9,29 +9,56 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Outline
 
-- GitHub: why use it?
-- cool features
-- new section
-- connect with RStudio project
+- GitHub: What's the Fuss?
+- connect to GitHub with RStudio projects
+- important tips
 - collaborating on GitHub
 - Berry Consultants GitHub Organization
 
-## Using GitHub through RStudio
+## Using GitHub through RStudio: Create a Repo
+![](/Users/cora/git_repos/GitHubPrez/RS/create_repo.png)
 
+## Using GitHub through RStudio: Create a Repo
+![](/Users/cora/git_repos/GitHubPrez/RS/create_repo_details.png)
+
+## Using GitHub through RStudio: Create a Repo
+![](/Users/cora/git_repos/GitHubPrez/RS/git_clone_copy.png)
+
+## Using GitHub through RStudio: Connect to an RStudio Project
+![](/Users/cora/git_repos/GitHubPrez/RS/clone_repo_in_RS.png)
+
+## Using GitHub through RStudio: Check your status on the Git Tab
+![](/Users/cora/git_repos/GitHubPrez/RS/unstaged_changes.png)
+
+## What changes did I make? Git Diff
+![](/Users/cora/git_repos/GitHubPrez/RS/gitdiff.png)
+
+## Getting Up to Date: Commit, Push, and You're Set!
+![](/Users/cora/git_repos/GitHubPrez/RS/uptodate.png)
+
+## Wait, when did I make that change? Git History
+![](/Users/cora/git_repos/GitHubPrez/RS/git_history.png)
+
+## Important Tips: Always use a good .gitignore file
+![](/Users/cora/git_repos/GitHubPrez/RS/find_gitignore.png)
+
+## Important Tips: Always use a good .gitignore file
+![](/Users/cora/git_repos/GitHubPrez/RS/customizedgi.png)
 
 ## Berry Consultants GitHub Organization
-- A free option, GitHub Free, with unlimited collaborators on unlimited public repositories with full features and unlimited private repositories with limited features.
-- The option to upgrade to GitHub Team or GitHub Enterprise Cloud for additional features, including sophisticated user authentication and management, and escalated support options. For more information, see "GitHub's products."
-- Unlimited membership with a variety of roles that grant different levels of access to the organization and its data
-- The ability to give members a range of access permissions to your organization's repositories
-- Nested teams that reflect your company or group's structure with cascading access permissions and mentions
-- The ability for organization owners to view members' two-factor authentication (2FA) status
-- The option to require all organization members to use two-factor authentication
-- The option to purchase a license for GitHub Advanced Security and use the features on private repositories.
+- create repositories, and control your collaborators
 
-## Slide with Plot
+## Bonus: Use GitHub through the terminal or desktop app
+::: columns
 
-```{r pressure}
-plot(pressure)
-```
+:::: column
+![](/Users/cora/git_repos/GitHubPrez/RS/fromterminal.png){width=120%}
 
+::::
+
+:::: column
+![](/Users/cora/git_repos/GitHubPrez/RS/desktop.png){width=100%}
+
+::::
+
+:::

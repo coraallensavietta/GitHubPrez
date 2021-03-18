@@ -1,3 +1,16 @@
+# Data Files
+*.csv
+*.xlsx
+
+# Image Files
+*.pdf
+*.png
+*.jpeg
+*.jpg
+
+# Let's ignore these annoying Mac files
+*.DS_Store
+
 # History files
 .Rhistory
 .Rapp.history
