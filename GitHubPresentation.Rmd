@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - GitHub: why use it?
 - cool features
+- new section
 - connect with RStudio project
 - collaborating on GitHub
 - Berry Consultants GitHub Organization
