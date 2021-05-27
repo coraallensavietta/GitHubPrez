@@ -1,6 +1,8 @@
 
 ---
-output: html_document
+output:
+  html_document:
+    highlight: pygments
 ---
 
 ```{r setup, include=FALSE}
@@ -18,21 +20,23 @@ Cora Allen-Savietta, Ph.D.
 :::: column
 - Why Version Control?  
 
-  - reproducibility, documentation
+  - reproducibility and documentation
+  
+  - what should I track? .gitignore files
 
-- Getting Started
+- Why Github?
 
-  - cloning or creating a repo
+  - share code with collaborators
+  
+  - conflict resolution
+  
+  - code review
 
-  - pull, commit, push!
+- Clone an existing repository
+  
+- Use GitHub through RStudio
 
-  - code review \& issue tracking
-
-- Useful Tips \& Fun Tricks
-
-  - integrate with RStudio
-
-  - bonus tips: desktop app \& make your own octocat!
+- Additional Useful Tips
 
 ::::
 
@@ -41,9 +45,9 @@ Cora Allen-Savietta, Ph.D.
 ::::
 :::
 
-## Why GitHub?
+## Why Version Control?
 
-**GitHub helps you take care of your future self**
+**Git helps you take care of your future self**
 
 As you work, it
 
@@ -51,9 +55,7 @@ As you work, it
 
 - catalogs files over time for easy version control
 
-With built-in documentation and version control, GitHub makes your projects reproducible, even if you come back months or years later.
-
-### Version Control
+With built-in documentation and version control, Git makes your projects reproducible, even if you come back months or years later.
 
 - Each snapshot, called a "commit", tracks changes to each file
 
@@ -61,103 +63,28 @@ With built-in documentation and version control, GitHub makes your projects repr
 
 - built-in reproducibility: with built-in version control and documention, you'll know exactly which version of your code created that design report!
 
-### Collaborate Seamlessly
-
-- Each collaborator has the project on their machine
-
-- To get your changes, they **pull** your changes from the remote.
-
-- To add their changes, they will **push** their additions
-
-- conflict resolution: If you've made changes to the same code, you can handle this with a **merge**, so that, even if there are conflicts, you can build on each others work without overwriting or missing updates.
-
-- GitHub's code review functionality makes code review quick and easy. Makes for better, less buggy code!
-
-- Track issues within a team, then assign them to teammembers to keep the project organized. (More on these last two later!)
-
-Let's check out the history of a repository:
-
-```{shell, echo = TRUE, eval=FALSE}
-git log --abbrev-commit --graph --pretty=oneline --all --decorate
-```
-
-## Getting Started: 
-
-### Cloning a Repo
-
-Let's illustrate how to get started with the Berry [Shared Simulation Code Library](https://github.com/BerryConsultants/Shared-Trial-Simulation-Library)
-
-Step 1: Navigate to the folder you'd like to house your repo and make sure you're not already in a git repo:
-![](/Users/cora/git_repos/GitHubPrez/isgitrepo.png)
-good!
-
-Step 2: Go to GitHub page and copy the url
-![](/Users/cora/git_repos/GitHubPrez/isgitrepo.png)
-
-then go the folder you checked in step one and type
-```{shell, echo = TRUE, eval=FALSE}
-git clone https://github.com/BerryConsultants/Shared-Trial-Simulation-Library.git
-```
-
-Step 3: Move your files into the folder then pull, commit, push
-```{shell, echo = TRUE, eval=FALSE}
-git diff # differences between new version and staged area (if present) or last commit
-git add file-name # adding new edits to staging area
+Let's create a new project directory and see how git can help us track our versions.
+```{bash, echo = TRUE, eval=FALSE}
+mkdir newrepo # create a new folder
+cd newrepo
+git init # create a git repository
 git status
-git commit -m"code for simulating a Goldilocks trial with a Win Ratio endpoint"
-git status
-git push
+code readme.md # then make changes to the readme in VSCode
+git add readme.md # stages file
+git commit -m"starting a readme for docs" # create a new commit with a log message
+git log # to see our repo's commit history. each commit has a unique ID, called a SHA
+git show SHA # use SHA to see only its changes
+code readme.md # make new changes to the readme
+git diff # see only new differences
+git add readme.md # add these changes
+git reset # oops! didn't mean to add those
 ```
 
-### Creating a New Repo through the Terminal
-
-Step 1: Create a git repo on GitHub.com
-
-![](/Users/cora/git_repos/GitHubPrez/RS/create_repo.png)
-
-![](/Users/cora/git_repos/GitHubPrez/createnewrepo.png)
-
-Step 2: Copy the url then clone in a directory
-```{shell, echo = TRUE, eval=FALSE}
-git status # should say you're not in a git repo
-git clone https://github.com/BerryConsultants/Shared-Trial-Simulation-Library.git
-```
-
-Step 3: Write a short summary of the project in your README and start writing code!
-
-Step 4: Pull, Commit, Push!
-One you've made some progress, commit and push your changes.
-```{shell, echo = TRUE, eval=FALSE}
-git diff# differences between new version and staged area (if present) or last commit
-git add newfilenames
-git pull # pull, just in case any collaborators have pushed changes in the interims
-git commit -m"informative commit message. This is a note to your future self!"
-git push
-```
-
-### Code Review
-GitHub's code review functionality makes code review quick and easy. Makes for better, less buggy code!
-
-### Issue Tracking
-Track issues within a team, then assign them to teammembers to keep the project organized.
-
-## Questions about Getting Started?
-
-# Useful Tips \& Tricks
-
-- git ignore files
-
-- Berry GitHub Organization
-
-- using GitHub with RStudio
-
-
-
-## Important Tip: Always use a good .gitignore file
+What if we have some files that we don't want to track? 
 
 We want to track:
 
-- scripts: any kind of code in R, Python, Julia, ...
+- scripts: any kind of code in R, Python, Julia, Fortran...
 
 - text documentation: 
 
@@ -165,64 +92,157 @@ We want to track:
   
   - data analysis pipeline instructions: step-by-step instructions for reproducing results
   
-Do *not* track:
+We should *not* track:
 
 - large data files
+
 - any large files that can be reproduced
+
 - binary files: instead, document where they were obtained or how to recompile
+
 - pdf and figures: instead, document how they can be reproduced
+
 - MS Word/Powerpoint documents: they are not plain text files
 
-To avoid accidentally adding these files, use a gitignore file:
-![](/Users/cora/git_repos/GitHubPrez/RS/find_gitignore.png)
+To avoid accidentally adding these files, we use a gitignore file!
 
-![](/Users/cora/git_repos/GitHubPrez/RS/customizedgi.png)
+```{bash, echo = TRUE, eval=FALSE}
+code data.csv # add a data file to the repository. we don't want to track this!
+code words.docx # create a word document. we don't want to track this either
+git status
+code .gitignore # create a .gitignore file, add *.csv, *.docx, any other file types you dont want to track
+git status
+git add .gitignore
+git commit -m"adding a gitignore file to ignore csv and docx files"
+code words2.docx # create another word file
+git status # git automatically does not track it!
+code . # untracked files are lighter in VSCode
+```
 
-## Berry Consultants GitHub Organization
+### Why GitHub? Collaborate and Resolve Conflicts Seamlessly!
 
-- share code, as with our [Shared Simulation Code Library](https://github.com/BerryConsultants/Shared-Trial-Simulation-Library)
+- Each collaborator has the project on their machine
 
-- collaborate on projects
+- To get your changes, they **pull** your changes from the remote.
 
-- review code using pull requests
+- To add their changes, they will **push** their additions
 
-- track issues, then assign them across the team
+- conflict resolution: If you've made changes to the same code, you can handle this with a **merge**, so that you can build on each others work without overwriting or missing updates.
 
-## Using GitHub through RStudio: 
+- GitHub's code review functionality makes code review quick and easy. Makes for better, less buggy code!
 
-1. Create a repo or find an existing repo, as described above, then copy the repo's url
+#### Let's share our new repository with a collaborator!
+First, we'll go to GitHub.com, create a new repository, and add our collaborator. Then, we'll connect it to our local repository by following GitHub's instructions.
+```{bash, echo = TRUE, eval=FALSE}
+git remote add origin https://github.com/coraallensavietta/example-repo.git
+git branch -M main # rename main branch
+git push -u origin main # push all of my commits to remote
+```
 
-2. Connect the project to an RStudio Project
-![](/Users/cora/git_repos/GitHubPrez/RS/clone_repo_in_RS.png)
+#### Resolving Conflicts
+Let's say Lindsay goes in and makes changes to our readme.md file. 
+In the meantime, I've also made changes to the readme.md file on my local computer. 
+```{bash, echo = TRUE, eval=FALSE}
+code readme.md # i'll make changes locally
+git add
+git commit -m"added info about location of the data dictionary"
+git push
+```
+CONFLICT!
+Don't worry! This looks scary, but GitHub is great at handling conflicts. That's why we love it!
+GitHub will walk us through it.
+```{bash, echo = TRUE, eval=FALSE}
+git pull # pull Lindsay's changes from the remote
+git status 
+code readme.md # open the file with the conflict
+git add readme.md # add the resolved version of the files
+git commit
+git push # push the resolved version to the remote server!
+```
 
-3. Check your status on the Git Tab within RStudio
-![](/Users/cora/git_repos/GitHubPrez/RS/unstaged_changes.png)
+#### Branches
+Sometimes we want to test out a new feature or approach without committing to them. For this, we can create a copy of the main repository and test out our new idea on this **branch**.
+```{bash, echo = TRUE, eval=FALSE}
+git branch multivar-model # create a new branch to try a multivariate version of the model
+git checkout multivar-model # move to this branch
+code readme.md # try out this new model!
+git add readme.md
+git commit -m"trying a multivariate version of the model"
+git diff main # compare this branch to the main branch
+git push # on no! need to set the remote, just as we did for the main branch
+git push --set-upstream origin multivar-model # push changes to the remote repository
+```
 
-### What changes did I make? Git Diff
-![](/Users/cora/git_repos/GitHubPrez/RS/gitdiff.png)
+#### Code Review
+GitHub's code review functionality makes code review quick and easy. Makes for better, less buggy code!
+On the multivar-model branch, I just added a new version of the data analysis model to our repo. Before it's integrated into our main branch, I'd like Lindsay to look it over for bugs. To do this, I can use [GitHub's pull request process](https://github.com/coraallensavietta/example-repo/pulls).
 
-### Keeping your Repo Up to Date: Stage, Commit, Push!
+### Cloning a Repo
 
-Step 1: Stage Changes
-![](/Users/cora/git_repos/GitHubPrez/RS/stage_changes.png){width=80%}
+Let's illustrate how to get started with the Berry [Shared Simulation Code Library](https://github.com/BerryConsultants/Shared-Trial-Simulation-Library)
+
+Step 1: Navigate to the folder you'd like to house your repo and make sure you're not already in a git repo 
+![](/Users/cora/git_repos/GitHubPrez/isgitrepo.png){ width = 30% }
+good!
+
+Step 2: Go to GitHub page and copy the http url then go the folder you checked in step one and type
+```{bash, echo = TRUE, eval=FALSE}
+git clone https://github.com/BerryConsultants/Shared-Trial-Simulation-Library.git
+```
+
+You have now cloned the Berry Consultants GitHub Organization Sim Code repo!
+
+If you'd like to contribute your files to the library, clone the library, as shown above, then follow these commands
+```{bash, echo = TRUE, eval=FALSE}
+git add file-name # adding new edits to staging area
+git status
+git commit -m"code for simulating a Goldilocks trial with a Win Ratio endpoint" # commit with message
+git push # push your additions to the remote repository
+```
+
+### Using GitHub through RStudio: 
+
+1. Create a repo or find an existing repo, as described above, then copy the repo's URL.
+
+2. Connect your repository to an RStudio Project
+
+![](/Users/cora/git_repos/GitHubPrez/RS/clone_repo_in_RS.png){ width=30% }
+
+
+Check your status on the Git Tab within RStudio
+
+![](/Users/cora/git_repos/GitHubPrez/RS/unstaged_changes.png){ width=30% }
+
+Look at the changes you've made with git diff or git history
+
+![](/Users/cora/git_repos/GitHubPrez/RS/gitdiff.png){ width=30% }
+
+![](/Users/cora/git_repos/GitHubPrez/RS/git_history.png){ width=30% }
+
+**Keeping your Repo Up to Date on RStudio: Stage, Commit, Push!**    
+
+Similarly to using GitHub through the terimnal, we'll stage our changes, commit (with a message), and push our changes to the remote.
+Step 1: Stage Changes  
+
+![](/Users/cora/git_repos/GitHubPrez/RS/stage_changes.png){ width=30% }
 
 Step 2: Commit Changes
-![](/Users/cora/git_repos/GitHubPrez/RS/create_commit.png){width=80%}
+
+![](/Users/cora/git_repos/GitHubPrez/RS/create_commit.png){ width=30% }
 
 Step 3: Push Changes
-![](/Users/cora/git_repos/GitHubPrez/RS/push_changes.png){width=80%}
 
-**Important**: When collaborating, always pull before making changes.
+![](/Users/cora/git_repos/GitHubPrez/RS/push_changes.png){ width=30% }
 
-### Wait, when did I make that change? Git History
-![](/Users/cora/git_repos/GitHubPrez/RS/git_history.png)
 
-### Bonus Tips
- 
+### Additional Useful Links
+  
+  - set up VSCode as your default editor for Git [here](https://stackoverflow.com/questions/30024353/how-to-use-visual-studio-code-as-default-editor-for-git)
+
+- [great documentation for Git](https://git-scm.com/doc)
+
 - Today I've shown you how to use GitHub in the terminal and RStudio, but you can instead use GitHub's desktop app, available [here](https://desktop.github.com/).
 
 - And now that you've caught the GitHub bug, make your own octocat! [MyOctocat.com](https://myoctocat.com/)
-
-Questions?
 
 ![](/Users/cora/git_repos/GitHubPrez/octocora.png){ width=30% }
