@@ -3,6 +3,7 @@
 output:
   html_document:
     highlight: pygments
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -19,52 +20,44 @@ knitr::opts_chunk$set(echo = FALSE)
 ::: columns
 
 :::: column
-- Why Version Control?  
+- Version Control
 
-  - reproducibility and documentation
+  - define a clear history by taking "snapshots" as you work
   
-  - what should I track? .gitignore files
+  - track only certain files with .gitignore files
 
-- Why Github?
+- GitHub
 
   - share code with collaborators
   
-  - conflict resolution
+  - resolve conflicts
   
-  - code review
+  - review code with pull requests
 
-- Clone an existing repository
-  
-- Use GitHub through RStudio
+- Activity: Clone a repo and make a commit
 
-- Additional Useful Tips
+- Useful Links
 
 ::::
 
 :::: column
-![](/Users/cora/git_repos/GitHubPrez/octocora.png){ width=80% }
+![](/Users/cora/git_repos/GitHubPrez/octocora.png)
 ::::
 :::
 
-## Why Version Control?
+## Version Control with Git
 
-**Git helps you take care of your future self**
+As you work, Git
 
-As you work, it
+- tracks your changes as you work, allowing you to define a clear history
 
-- tracks your changes as you work, along with messages about the purposes of each change
+- Whenever you'd like to add to your history, you take a snapshot, called a "commit", and add a message.
 
-- catalogs files over time for easy version control
+- To look at a previous version of a project, simply check out the previous commit, then go come back to the newest version.
 
-With built-in documentation and version control, Git makes your projects reproducible, even if you come back months or years later.
+- Git helps you take care of your future self: *you'll know exactly which version of your code created that design report!*
 
-- Each snapshot, called a "commit", tracks changes to each file
-
-- To easily look back at a previous version of a project, simply check it a previous commit, then go come back to the newest version.
-
-- built-in reproducibility: with built-in version control and documention, you'll know exactly which version of your code created that design report!
-
-Let's create a new project directory and see how git can help us track our versions.
+Let's create a new project directory and see how git can help us track our changes.
 ```{bash, echo = TRUE, eval=FALSE}
 mkdir newrepo # create a new folder
 cd newrepo
@@ -73,96 +66,107 @@ git status
 code readme.md # then make changes to the readme in VSCode
 git add readme.md # stages file
 git commit -m"starting a readme for docs" # create a new commit with a log message
-git log # to see our repo's commit history. each commit has a unique ID, called a SHA
+git log # to see our repos commit history. each commit has a unique ID, called a SHA
 git show SHA # use SHA to see only its changes
 code readme.md # make new changes to the readme
 git diff # see only new differences
 git add readme.md # add these changes
 git reset # oops! didn't mean to add those
 ```
+Now, you have a git repo!
 
-What if we have some files that we don't want to track? 
+**What if we have want to add files to this directory, but don't want to track them?**   
 
-We want to track:
+We *want* to track:
 
-- scripts: any kind of code in R, Python, Julia, Fortran...
+- scripts: any kind of code in R, Rmd, Python, Julia, Fortran...
 
 - text documentation: 
 
+  - readme files
+    
   - data dictionaries
   
-  - data analysis pipeline instructions: step-by-step instructions for reproducing results
+  - data analysis pipelines (instructions for reproducing results)
   
-We should *not* track:
+We do *not* want to track:
 
-- large data files
+  - large data files
 
-- any large files that can be reproduced
+  - pdfs, images, figures: instead, document how they can be reproduced
 
-- binary files: instead, document where they were obtained or how to recompile
+  - MS Word/Powerpoint documents
 
-- pdf and figures: instead, document how they can be reproduced
-
-- MS Word/Powerpoint documents: they are not plain text files
-
-To avoid accidentally adding these files, we use a gitignore file!
+To avoid accidentally adding these files, we can use a gitignore file.
 
 ```{bash, echo = TRUE, eval=FALSE}
-code data.csv # add a data file to the repository. we don't want to track this!
-code words.docx # create a word document. we don't want to track this either
+code data.csv # add a data file to the repository. We dont want to track this!
+code words.docx # create a word document. We dont want to track this either
 git status
-code .gitignore # create a .gitignore file, add *.csv, *.docx, any other file types you dont want to track
+code . # VSCode bolds all file names
+code .gitignore # create a .gitignore file, add *.csv, *.docx, any other file extensions you dont want to track
 git status
 git add .gitignore
 git commit -m"adding a gitignore file to ignore csv and docx files"
 code words2.docx # create another word file
-git status # git automatically does not track it!
-code . # untracked files are lighter in VSCode
+git status # git automatically ignores this new docx file
+code . # ignored files are now lighter in VSCode
 ```
 
-### Why GitHub? Collaborate and Resolve Conflicts Seamlessly!
+#### Version Control with Git: Summary 
 
-- Each collaborator has the project on their machine
+- tracks your changes as you work, allowing you to **define a clear history**
 
-- To get your changes, they **pull** your changes from the remote.
+- **.gitignore** files help us control what is tracked
 
-- To add their changes, they will **push** their additions
+- useful commands     
+**git status**: summarizes changes that are staged/not staged for next commit    
+**git add**: stages changes    
+**git reset**: unstages changes    
+**git diff**: shows differences in files since last commit   
+**git commit -m"commit message"**: commits stages changes with a message   
+**git log**: shows git history, with each commit's SHA (id)    
+**git show SHA**: shows commit's changes and log message    
 
-- conflict resolution: If you've made changes to the same code, you can handle this with a **merge**, so that you can build on each others work without overwriting or missing updates.
+### GitHub: Collaborate and Resolve Conflicts Seamlessly!
+One of Git's best features is its ability to create text files that compare two versions of a file. These are called **diffs**. Git creates a **diff** when we compare a current version to one from six months ago. It also create a diff when we compare a version of my current code with Lindsay's code.
 
-- GitHub's code review functionality makes code review quick and easy. Makes for better, less buggy code!
+GitHub stores a **remote** copy of each repository so that we can create diffs with other people!
 
-#### Let's share our new repository with a collaborator!
-First, we'll go to GitHub.com, create a new repository, and add our collaborator. Then, we'll connect it to our local repository by following GitHub's instructions.
+#### Sharing our new repository with a collaborator
+First, we'll go to GitHub.com, create a new repository, and add our collaborator as a contributor. Then, we'll connect this remote GitHub repo to our local repository by following GitHub's instructions.
 ```{bash, echo = TRUE, eval=FALSE}
 git remote add origin https://github.com/coraallensavietta/example-repo.git
 git branch -M main # rename main branch
 git push -u origin main # push all of my commits to remote
 ```
+Now, Lindsay and I can collaborate and compare our work using git diffs!   
 
-#### Resolving Conflicts
-Let's say Lindsay goes in and makes changes to our readme.md file. 
+#### Resolving Conflicts during Collaboration
+First, let's say Lindsay goes in and makes changes to our readme.md file. 
+
 In the meantime, I've also made changes to the readme.md file on my local computer. 
 ```{bash, echo = TRUE, eval=FALSE}
-code readme.md # i'll make changes locally
+code readme.md # I make changes locally
 git add
 git commit -m"added info about location of the data dictionary"
 git push
-```
-CONFLICT!
+``` 
+*CONFLICT!*    
 Don't worry! This looks scary, but GitHub is great at handling conflicts. That's why we love it!
-GitHub will walk us through it.
+GitHub will walk us through resolving this conflict.
 ```{bash, echo = TRUE, eval=FALSE}
 git pull # pull Lindsay's changes from the remote
 git status 
-code readme.md # open the file with the conflict
+code readme.md # open the file with conflicts and resolve the conflict
 git add readme.md # add the resolved version of the files
-git commit
-git push # push the resolved version to the remote server!
+git commit # commit this newly resolved file
+git push # push the resolved version to remote
 ```
+Now, the my local repo and the remote repo on GitHub both have the resolved version of readme.md, which includes both my changes and Lindsay's changes. Lindsay can *pull* it to her local machine and she will have it too!
 
-#### Branches
-Sometimes we want to test out a new feature or approach without committing to them. For this, we can create a copy of the main repository and test out our new idea on this **branch**.
+#### Branches and Code Review
+Often we want to test out a new feature before we add it to the main code base. To do this, we create a copy of the main repository, a **branch**, where we can play around with this new code.
 ```{bash, echo = TRUE, eval=FALSE}
 git branch multivar-model # create a new branch to try a multivariate version of the model
 git checkout multivar-model # move to this branch
@@ -174,76 +178,75 @@ git push # on no! need to set the remote, just as we did for the main branch
 git push --set-upstream origin multivar-model # push changes to the remote repository
 ```
 
-#### Code Review
-GitHub's code review functionality makes code review quick and easy. Makes for better, less buggy code!
-On the multivar-model branch, I just added a new version of the data analysis model to our repo. Before it's integrated into our main branch, I'd like Lindsay to look it over for bugs. To do this, I can use [GitHub's pull request process](https://github.com/coraallensavietta/example-repo/pulls).
+On the multivar-model branch, I just added a new version of the data analysis model to our repo. Before it's integrated into our main branch, I'd like Lindsay to look it over.
 
-### Cloning a Repo
+To do this, I'll use [GitHub's pull request process](https://github.com/coraallensavietta/example-repo/pulls) and ask Lindsay to review the code.
 
-Let's illustrate how to get started with the Berry [Shared Simulation Code Library](https://github.com/BerryConsultants/Shared-Trial-Simulation-Library)
+#### GitHub: Summary    
 
-Step 1: Navigate to the folder you'd like to house your repo and make sure you're not already in a git repo 
-![](/Users/cora/git_repos/GitHubPrez/isgitrepo.png){ width = 30% }
-good!
+- Each collaborator has a **local** version git repo on their machine. GitHub stores the **remote** version of each repo. This lets us compare our local files with those stored on GitHub.
 
-Step 2: Go to GitHub page and copy the http url then go the folder you checked in step one and type
+- To get your changes, collaborators will **pull** your changes from the remote GitHub repo
+
+- To add their changes, they will **push** to the remote.
+
+- **conflict resolution**: If you've made changes to the same code, you can smoothly handle them with a **merge**, so that you can write code together without overwriting each others work or missing changes.
+
+- GitHub's **branching** and **code review** makes code review quick and easy for better, less buggy code!
+
+### Activity: Clone a GitHub Repo and Make a Commit
+
+Today we will clone the Berry Consultants [Shared Simulation Code Library](https://github.com/BerryConsultants/Shared-Trial-Simulation-Library), so that we can start contributing to it!
+
+**Step 1**: If you don't already have one, [create a GitHub account](https://docs.github.com/en/github/getting-started-with-github/signing-up-for-github/signing-up-for-a-new-github-account) and verify your email address.
+
+**Step 2**: If you haven't done so, email or Slack your user ID to Henrik, Kert, or Pravin so they can add you to the Berry GitHub team.
+
+**Step 3**: Step up Git, following [these instructions](https://docs.github.com/en/github/getting-started-with-github/quickstart/set-up-git#setting-up-git).   
+If you're on a Mac, you may not need to download Git. 
+
+**Step 4**: Cache your GitHub credentials in Git following [these instructions](https://docs.github.com/en/github/getting-started-with-github/getting-started-with-git/caching-your-github-credentials-in-git).       
+We'll be cloning repositories using HTTPS, so we can use a credential helper so that Git remembers your username and password. At the end, you'll need to create a personal access token, following [these instructions](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+
+**Now you're ready to clone your first repo!**   
+
+**Step 5**: Navigate to the folder where you'd like to keep this repo and make sure it's not already a git repository.
+```{bash, echo = TRUE, eval=FALSE}
+git status # should tell you are not in a git repo
+```
+
+**Step 6**: Go to GitHub page and copy the Berry Sim Library's HTTPS URL. Then, go the folder you checked in step one and type in to your terminal:  
 ```{bash, echo = TRUE, eval=FALSE}
 git clone https://github.com/BerryConsultants/Shared-Trial-Simulation-Library.git
 ```
+Now, you can explore the repository on your local machine!
 
-You have now cloned the Berry Consultants GitHub Organization Sim Code repo!
-
-If you'd like to contribute your files to the library, clone the library, as shown above, then follow these commands
+**Step 7**: Add your first commit
+We'll each add a new file to the repository, which we'll name with our initials: e.g. yourinitials.txt.    
+**Please don't use a generic file name -- this could create a giant 20-way conflict.**  
 ```{bash, echo = TRUE, eval=FALSE}
-git add file-name # adding new edits to staging area
+cd testcommits # go into the testcommmits directory 
+touch your-file-name # use this file name: yourinitials.txt 
+git add your-file-name # stage your new file using its file name (e.g. yourinitials.txt)
 git status
-git commit -m"code for simulating a Goldilocks trial with a Win Ratio endpoint" # commit with message
+git commit -m"pushing my first commit to the Berry Code Library!" # commit with message
 git push # push your additions to the remote repository
 ```
 
-### Using GitHub through RStudio: 
+### Useful Links
 
-1. Create a repo or find an existing repo, as described above, then copy the repo's URL.
-
-2. Connect your repository to an RStudio Project
-
-![](/Users/cora/git_repos/GitHubPrez/RS/clone_repo_in_RS.png){ width=30% }
-
-
-Check your status on the Git Tab within RStudio
-
-![](/Users/cora/git_repos/GitHubPrez/RS/unstaged_changes.png){ width=30% }
-
-Look at the changes you've made with git diff or git history
-
-![](/Users/cora/git_repos/GitHubPrez/RS/gitdiff.png){ width=30% }
-
-![](/Users/cora/git_repos/GitHubPrez/RS/git_history.png){ width=30% }
-
-**Keeping your Repo Up to Date on RStudio: Stage, Commit, Push!**    
-
-Similarly to using GitHub through the terimnal, we'll stage our changes, commit (with a message), and push our changes to the remote.
-Step 1: Stage Changes  
-
-![](/Users/cora/git_repos/GitHubPrez/RS/stage_changes.png){ width=30% }
-
-Step 2: Commit Changes
-
-![](/Users/cora/git_repos/GitHubPrez/RS/create_commit.png){ width=30% }
-
-Step 3: Push Changes
-
-![](/Users/cora/git_repos/GitHubPrez/RS/push_changes.png){ width=30% }
-
-
-### Additional Useful Links
+- Set up VSCode as your default Git editor [here](https://stackoverflow.com/questions/30024353/how-to-use-visual-studio-code-as-default-editor-for-git)
+ 
+- [Git docs](https://git-scm.com/doc)
+ 
+- [Collaborate with Pull Requests on GitHub](https://docs.github.com/en/github/getting-started-with-github/quickstart/github-flow)
   
-  - set up VSCode as your default editor for Git [here](https://stackoverflow.com/questions/30024353/how-to-use-visual-studio-code-as-default-editor-for-git)
+- [Communicate about projects with Issues, PRs, and team discussions](https://docs.github.com/en/github/getting-started-with-github/quickstart/communicating-on-github)
+  
+- [More tips for getting started on GitHub](https://docs.github.com/en/github/getting-started-with-github/quickstart)
 
-- [great documentation for Git](https://git-scm.com/doc)
+- Today I've shown you how to use GitHub in the terminal, but you can instead use [RStudio](https://happygitwithr.com/rstudio-git-github.html) or [GitHub's desktop app](https://desktop.github.com/).
 
-- Today I've shown you how to use GitHub in the terminal and RStudio, but you can instead use GitHub's desktop app, available [here](https://desktop.github.com/).
-
-- And now that you've caught the GitHub bug, make your own octocat! [MyOctocat.com](https://myoctocat.com/)
+- And now that you've caught the GitHub bug, [make your own octocat](https://myoctocat.com/)!
 
 ![](/Users/cora/git_repos/GitHubPrez/octocora.png){ width=30% }
