@@ -1,3 +1,5 @@
-# GitHubPrez
+#  Presentation on Git and GitHub 
 
-This folder holds a short presentation on collaborating on GitHub for the consulting team at Berry Consultants.
+A presentation for Berry Consultants on May 28th about Git and GitHub for version control, collaboration, conflict resolution, and code review.
+
+Presentation hosted as a public website here: https://coraallensavietta.github.io/GitHubPrez/

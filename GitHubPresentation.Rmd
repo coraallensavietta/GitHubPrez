@@ -6,11 +6,12 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+# Berry Consultants Stats Call   
+# May 28th 2021   
+# Cora Allen-Savietta, Ph.D.  
 knitr::opts_chunk$set(echo = FALSE)
 ```
-Berry Consultants Stats Call   
-May 28th 2021   
-Cora Allen-Savietta, Ph.D.  
+
 
 \bigskip
 
