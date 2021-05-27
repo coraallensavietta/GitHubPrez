@@ -1,83 +1,228 @@
+
 ---
-title: "GitHub Presentation"
-output: beamer_presentation
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+Berry Consultants Stats Call   
+May 28th 2021   
+Cora Allen-Savietta, Ph.D.  
 
-## Outline
+\bigskip
 
-- GitHub: What's the Fuss?
-- connect to GitHub with RStudio projects
-- important tips
-- collaborating on GitHub
-- Berry Consultants GitHub Organization
-
-## Using GitHub through RStudio: Create a Repo
-![](/Users/cora/git_repos/GitHubPrez/RS/create_repo.png)
-
-## Using GitHub through RStudio: Create a Repo
-![](/Users/cora/git_repos/GitHubPrez/RS/create_repo_details.png)
-
-## Using GitHub through RStudio: Create a Repo
-![](/Users/cora/git_repos/GitHubPrez/RS/git_clone_copy.png)
-
-## Using GitHub through RStudio: Connect to an RStudio Project
-![](/Users/cora/git_repos/GitHubPrez/RS/clone_repo_in_RS.png)
-
-## Using GitHub through RStudio: Check your status on the Git Tab
-![](/Users/cora/git_repos/GitHubPrez/RS/unstaged_changes.png)
-
-## What changes did I make? Git Diff
-![](/Users/cora/git_repos/GitHubPrez/RS/gitdiff.png)
-
-## Getting Up to Date: Commit, Push, and You're Set!
+## Getting Started with GitHub
 ::: columns
 
 :::: column
-Step 0: When collaborating, always pull before making changes!
+- Why Version Control?  
 
-Step 1: Stage Changes
-![](/Users/cora/git_repos/GitHubPrez/RS/stage_changes.png)
+  - reproducibility, documentation
+
+- Getting Started
+
+  - cloning or creating a repo
+
+  - pull, commit, push!
+
+  - code review \& issue tracking
+
+- Useful Tips \& Fun Tricks
+
+  - integrate with RStudio
+
+  - bonus tips: desktop app \& make your own octocat!
+
 ::::
 
 :::: column
-Step 2: Commit Changes
-[](/Users/cora/git_repos/GitHubPrez/RS/create_commit.png)
+![](/Users/cora/git_repos/GitHubPrez/octocora.png){ width=80% }
 ::::
-
-:::: column
-Step 3: Push Changes
-[](/Users/cora/git_repos/GitHubPrez/RS/push_changes.png)
-::::
-
 :::
 
-## Wait, when did I make that change? Git History
-![](/Users/cora/git_repos/GitHubPrez/RS/git_history.png)
+## Why GitHub?
 
-## Important Tips: Always use a good .gitignore file
+**GitHub helps you take care of your future self**
+
+As you work, it
+
+- tracks your changes as you work, along with messages about the purposes of each change
+
+- catalogs files over time for easy version control
+
+With built-in documentation and version control, GitHub makes your projects reproducible, even if you come back months or years later.
+
+### Version Control
+
+- Each snapshot, called a "commit", tracks changes to each file
+
+- To easily look back at a previous version of a project, simply check it a previous commit, then go come back to the newest version.
+
+- built-in reproducibility: with built-in version control and documention, you'll know exactly which version of your code created that design report!
+
+### Collaborate Seamlessly
+
+- Each collaborator has the project on their machine
+
+- To get your changes, they **pull** your changes from the remote.
+
+- To add their changes, they will **push** their additions
+
+- conflict resolution: If you've made changes to the same code, you can handle this with a **merge**, so that, even if there are conflicts, you can build on each others work without overwriting or missing updates.
+
+- GitHub's code review functionality makes code review quick and easy. Makes for better, less buggy code!
+
+- Track issues within a team, then assign them to teammembers to keep the project organized. (More on these last two later!)
+
+Let's check out the history of a repository:
+
+```{shell, echo = TRUE, eval=FALSE}
+git log --abbrev-commit --graph --pretty=oneline --all --decorate
+```
+
+## Getting Started: 
+
+### Cloning a Repo
+
+Let's illustrate how to get started with the Berry [Shared Simulation Code Library](https://github.com/BerryConsultants/Shared-Trial-Simulation-Library)
+
+Step 1: Navigate to the folder you'd like to house your repo and make sure you're not already in a git repo:
+![](/Users/cora/git_repos/GitHubPrez/isgitrepo.png)
+good!
+
+Step 2: Go to GitHub page and copy the url
+![](/Users/cora/git_repos/GitHubPrez/isgitrepo.png)
+
+then go the folder you checked in step one and type
+```{shell, echo = TRUE, eval=FALSE}
+git clone https://github.com/BerryConsultants/Shared-Trial-Simulation-Library.git
+```
+
+Step 3: Move your files into the folder then pull, commit, push
+```{shell, echo = TRUE, eval=FALSE}
+git diff # differences between new version and staged area (if present) or last commit
+git add file-name # adding new edits to staging area
+git status
+git commit -m"code for simulating a Goldilocks trial with a Win Ratio endpoint"
+git status
+git push
+```
+
+### Creating a New Repo through the Terminal
+
+Step 1: Create a git repo on GitHub.com
+
+![](/Users/cora/git_repos/GitHubPrez/RS/create_repo.png)
+
+![](/Users/cora/git_repos/GitHubPrez/createnewrepo.png)
+
+Step 2: Copy the url then clone in a directory
+```{shell, echo = TRUE, eval=FALSE}
+git status # should say you're not in a git repo
+git clone https://github.com/BerryConsultants/Shared-Trial-Simulation-Library.git
+```
+
+Step 3: Write a short summary of the project in your README and start writing code!
+
+Step 4: Pull, Commit, Push!
+One you've made some progress, commit and push your changes.
+```{shell, echo = TRUE, eval=FALSE}
+git diff# differences between new version and staged area (if present) or last commit
+git add newfilenames
+git pull # pull, just in case any collaborators have pushed changes in the interims
+git commit -m"informative commit message. This is a note to your future self!"
+git push
+```
+
+### Code Review
+GitHub's code review functionality makes code review quick and easy. Makes for better, less buggy code!
+
+### Issue Tracking
+Track issues within a team, then assign them to teammembers to keep the project organized.
+
+## Questions about Getting Started?
+
+# Useful Tips \& Tricks
+
+- git ignore files
+
+- Berry GitHub Organization
+
+- using GitHub with RStudio
+
+
+
+## Important Tip: Always use a good .gitignore file
+
+We want to track:
+
+- scripts: any kind of code in R, Python, Julia, ...
+
+- text documentation: 
+
+  - data dictionaries
+  
+  - data analysis pipeline instructions: step-by-step instructions for reproducing results
+  
+Do *not* track:
+
+- large data files
+- any large files that can be reproduced
+- binary files: instead, document where they were obtained or how to recompile
+- pdf and figures: instead, document how they can be reproduced
+- MS Word/Powerpoint documents: they are not plain text files
+
+To avoid accidentally adding these files, use a gitignore file:
 ![](/Users/cora/git_repos/GitHubPrez/RS/find_gitignore.png)
 
-## Important Tips: Always use a good .gitignore file
 ![](/Users/cora/git_repos/GitHubPrez/RS/customizedgi.png)
 
 ## Berry Consultants GitHub Organization
-- create repositories, and control your collaborators
 
-## Bonus: Use GitHub through the terminal or desktop app
-::: columns
+- share code, as with our [Shared Simulation Code Library](https://github.com/BerryConsultants/Shared-Trial-Simulation-Library)
 
-:::: column
-![](/Users/cora/git_repos/GitHubPrez/RS/fromterminal.png){width=110%}
+- collaborate on projects
 
-::::
+- review code using pull requests
 
-:::: column
-![](/Users/cora/git_repos/GitHubPrez/RS/desktop.png){width=95%}
+- track issues, then assign them across the team
 
-::::
+## Using GitHub through RStudio: 
 
-:::
+1. Create a repo or find an existing repo, as described above, then copy the repo's url
+
+2. Connect the project to an RStudio Project
+![](/Users/cora/git_repos/GitHubPrez/RS/clone_repo_in_RS.png)
+
+3. Check your status on the Git Tab within RStudio
+![](/Users/cora/git_repos/GitHubPrez/RS/unstaged_changes.png)
+
+### What changes did I make? Git Diff
+![](/Users/cora/git_repos/GitHubPrez/RS/gitdiff.png)
+
+### Keeping your Repo Up to Date: Stage, Commit, Push!
+
+Step 1: Stage Changes
+![](/Users/cora/git_repos/GitHubPrez/RS/stage_changes.png){width=80%}
+
+Step 2: Commit Changes
+![](/Users/cora/git_repos/GitHubPrez/RS/create_commit.png){width=80%}
+
+Step 3: Push Changes
+![](/Users/cora/git_repos/GitHubPrez/RS/push_changes.png){width=80%}
+
+**Important**: When collaborating, always pull before making changes.
+
+### Wait, when did I make that change? Git History
+![](/Users/cora/git_repos/GitHubPrez/RS/git_history.png)
+
+### Bonus Tips
+ 
+- Today I've shown you how to use GitHub in the terminal and RStudio, but you can instead use GitHub's desktop app, available [here](https://desktop.github.com/).
+
+- And now that you've caught the GitHub bug, make your own octocat! [MyOctocat.com](https://myoctocat.com/)
+
+Questions?
+
+![](/Users/cora/git_repos/GitHubPrez/octocora.png){ width=30% }
