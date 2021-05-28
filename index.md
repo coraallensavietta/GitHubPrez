@@ -38,7 +38,7 @@ description: intro, version control with Git
 
 Let's create a new project directory and see how git can help us track our changes.   
 
-```{bash, echo = TRUE, eval=FALSE}
+```{bash, echo = TRUE, eval=FALSE}    
 mkdir example-repo # create a new folder
 cd example-repo
 git init # create a git repository
@@ -52,7 +52,7 @@ code readme.md # make new changes to the readme
 git diff # see only new differences
 git add readme.md # add these changes
 git reset # oops! didn't mean to add those
-```
+```    
 
 Now, you have a git repo!
 
@@ -80,7 +80,7 @@ We do *not* want to track:
 
 To avoid accidentally adding these files, we can use a gitignore file.
 
-```{bash, echo = TRUE, eval=FALSE}
+```{bash, echo = TRUE, eval=FALSE}    
 code data.csv # add a data file to the repository. We dont want to track this!
 code words.docx # create a word document. We dont want to track this either
 git status
@@ -92,7 +92,7 @@ git commit -m"adding a gitignore file to ignore csv and docx files"
 code words2.docx # create another word file
 git status # git automatically ignores this new docx file
 code . # ignored files are now lighter in VSCode
-```
+```    
 
 ### Version Control with Git: Summary 
 
