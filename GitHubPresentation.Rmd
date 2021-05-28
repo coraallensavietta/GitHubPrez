@@ -47,13 +47,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Version Control with Git
 
-As you work, Git
+- Git tracks your changes, allowing you to define a clear history
 
-- tracks your changes as you work, allowing you to define a clear history
+- Whenever you'd like to add to your history, take a snapshot, called a "commit", and add a message.
 
-- Whenever you'd like to add to your history, you take a snapshot, called a "commit", and add a message.
-
-- To look at a previous version of a project, simply check out the previous commit, then go come back to the newest version.
+- To look at a previous version of a project and its commit message, check out the previous commit, then come back to the newest version.
 
 - Git helps you take care of your future self: *you'll know exactly which version of your code created that design report!*
 
@@ -91,7 +89,7 @@ We *want* to track:
   
 We do *not* want to track:
 
-  - large data files
+  - large or sensitive data files. (Unauthorized users cannot access private repos, but its still not best practice to track data files.)
 
   - pdfs, images, figures: instead, document how they can be reproduced
 
@@ -221,13 +219,12 @@ git clone https://github.com/BerryConsultants/Shared-Trial-Simulation-Library.gi
 ```
 Now, you can explore the repository on your local machine!
 
-**Step 7**: Add your first commit
-We'll each add a new file to the repository, which we'll name with our initials: e.g. yourinitials.txt.    
-**Please don't use a generic file name -- this could create a giant 20-way conflict.**  
+**Step 7**: Push your first commit!   
+Add a new file to the repository, named with your initials: e.g. yourinitials.txt.    
 ```{bash, echo = TRUE, eval=FALSE}
 cd testcommits # go into the testcommmits directory 
-touch your-file-name # use this file name: yourinitials.txt 
-git add your-file-name # stage your new file using its file name (e.g. yourinitials.txt)
+touch your-file-name # create a new file named yourinitials.txt 
+git add your-file-name # stage your new file using its file name (yourinitials.txt)
 git status
 git commit -m"pushing my first commit to the Berry Code Library!" # commit with message
 git push # push your additions to the remote repository

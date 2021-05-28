@@ -292,11 +292,10 @@ summary {
 </div>
 <div id="version-control-with-git" class="section level2">
 <h2>Version Control with Git</h2>
-<p>As you work, Git</p>
 <ul>
-<li><p>tracks your changes as you work, allowing you to define a clear history</p></li>
-<li><p>Whenever you’d like to add to your history, you take a snapshot, called a “commit”, and add a message.</p></li>
-<li><p>To look at a previous version of a project, simply check out the previous commit, then go come back to the newest version.</p></li>
+<li><p>Git tracks your changes, allowing you to define a clear history</p></li>
+<li><p>Whenever you’d like to add to your history, take a snapshot, called a “commit”, and add a message.</p></li>
+<li><p>To look at a previous version of a project and its commit message, check out the previous commit, then come back to the newest version.</p></li>
 <li><p>Git helps you take care of your future self: <em>you’ll know exactly which version of your code created that design report!</em></p></li>
 </ul>
 <p>Let’s create a new project directory and see how git can help us track our changes.</p>
@@ -327,7 +326,7 @@ summary {
 </ul>
 <p>We do <em>not</em> want to track:</p>
 <ul>
-<li><p>large data files</p></li>
+<li><p>large or sensitive data files. (Unauthorized users cannot access private repos, but its still not best practice to track data files.)</p></li>
 <li><p>pdfs, images, figures: instead, document how they can be reproduced</p></li>
 <li><p>MS Word/Powerpoint documents</p></li>
 </ul>
@@ -428,11 +427,11 @@ We’ll be cloning repositories using HTTPS, so we can use a credential helper s
 <p><strong>Step 6</strong>: Go to GitHub page and copy the Berry Sim Library’s HTTPS URL. Then, go the folder you checked in step one and type in to your terminal:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/BerryConsultants/Shared-Trial-Simulation-Library.git</span></code></pre></div>
 <p>Now, you can explore the repository on your local machine!</p>
-<p><strong>Step 7</strong>: Add your first commit We’ll each add a new file to the repository, which we’ll name with our initials: e.g. yourinitials.txt.<br />
-<strong>Please don’t use a generic file name – this could create a giant 20-way conflict.</strong></p>
+<p><strong>Step 7</strong>: Add your first commit!<br />
+Add a new file to the repository, named with your initials: e.g. yourinitials.txt.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> testcommits <span class="co"># go into the testcommmits directory </span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> your-file-name <span class="co"># use this file name: yourinitials.txt </span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add your-file-name <span class="co"># stage your new file using its file name (e.g. yourinitials.txt)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> your-file-name <span class="co"># create a new file named yourinitials.txt </span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add your-file-name <span class="co"># stage your new file using its file name (yourinitials.txt)</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit -m<span class="st">&quot;pushing my first commit to the Berry Code Library!&quot;</span> <span class="co"># commit with message</span></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="co"># push your additions to the remote repository</span></span></code></pre></div>
