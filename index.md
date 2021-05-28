@@ -6,7 +6,7 @@ description: intro, version control with Git
  
 ## Getting Started with GitHub
 
-- Section 1: Version Control
+- [Section 1: Version Control](index.html)
 
   - define a clear history by taking "snapshots" as you work
   
@@ -36,7 +36,8 @@ description: intro, version control with Git
 
 - Git helps you take care of your future self: *you'll know exactly which version of your code created that design report!*
 
-Let's create a new project directory and see how git can help us track our changes.
+Let's create a new project directory and see how git can help us track our changes.   
+
 ```{bash, echo = TRUE, eval=FALSE}
 mkdir example-repo # create a new folder
 cd example-repo
@@ -52,6 +53,7 @@ git diff # see only new differences
 git add readme.md # add these changes
 git reset # oops! didn't mean to add those
 ```
+
 Now, you have a git repo!
 
 ### Control what you track with a Gitignore File   
