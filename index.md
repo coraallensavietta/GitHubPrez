@@ -109,7 +109,7 @@ code . # ignored files are now lighter in VSCode
 **git log**: shows git history, with each commit's SHA (id)    
 **git show SHA**: shows commit's changes and log message    
 
-**Next**
+next
 
 [Section 2: GitHub, Merging, and Branching](GitHub_Merges_Branches_CodeReview.html)   
 

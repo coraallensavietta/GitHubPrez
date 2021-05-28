@@ -119,7 +119,7 @@ git push # push your additions to the remote repository
 
 <img src="octocora.png" alt="drawing" width="200"/>
 
-Previously  
+previously  
 
 [Section 1: Intro and Git](index.html)    
 
