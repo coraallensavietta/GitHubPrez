@@ -3,8 +3,6 @@ layout: page
 title: Version Control with Git
 description: intro, version control with Git
 ---
- 
-## Getting Started with GitHub
 
 - [Section 1: Version Control](index.html)
 
