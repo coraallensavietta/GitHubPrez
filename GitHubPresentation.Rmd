@@ -1,12 +1,18 @@
 
 ---
+layout: page
+title: Version Control with Git
+description: notes, links, example code and exercises
+---
+[next](notes0906-bestpractices.html)
+
+```{r setup, include=FALSE}
+---
 output:
   html_document:
     highlight: pygments
   pdf_document: default
 ---
-
-```{r setup, include=FALSE}
 # Berry Consultants Stats Call   
 # May 28th 2021   
 # Cora Allen-Savietta, Ph.D.  
@@ -57,8 +63,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Let's create a new project directory and see how git can help us track our changes.
 ```{bash, echo = TRUE, eval=FALSE}
-mkdir newrepo # create a new folder
-cd newrepo
+mkdir example-repo # create a new folder
+cd example-repo
 git init # create a git repository
 git status
 code readme.md # then make changes to the readme in VSCode
@@ -242,7 +248,7 @@ git push # push your additions to the remote repository
   
 - [More tips for getting started on GitHub](https://docs.github.com/en/github/getting-started-with-github/quickstart)
 
-- Today I've shown you how to use GitHub in the terminal, but you can instead use [RStudio](https://happygitwithr.com/rstudio-git-github.html) or [GitHub's desktop app](https://desktop.github.com/).
+- Today I've shown you how to use GitHub in the terminal, but you can also use [RStudio](https://happygitwithr.com/rstudio-git-github.html) or [GitHub's desktop app](https://desktop.github.com/).
 
 - And now that you've caught the GitHub bug, [make your own octocat](https://myoctocat.com/)!
 
