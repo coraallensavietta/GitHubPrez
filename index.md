@@ -38,7 +38,7 @@ description: intro, version control with Git
 
 Let's create a new project directory and see how git can help us track our changes.   
 
-```{bash, echo = TRUE, eval=FALSE}    
+```shell        
 mkdir example-repo # create a new folder
 cd example-repo
 git init # create a git repository
@@ -80,7 +80,7 @@ We do *not* want to track:
 
 To avoid accidentally adding these files, we can use a gitignore file.
 
-```{bash, echo = TRUE, eval=FALSE}    
+```shell        
 code data.csv # add a data file to the repository. We dont want to track this!
 code words.docx # create a word document. We dont want to track this either
 git status

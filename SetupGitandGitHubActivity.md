@@ -77,13 +77,13 @@ Password: your_token
 
 **Step 5**: Navigate to the folder where you'd like to keep this repo and make sure it's not already a git repository.   
 
-```{bash, echo = TRUE, eval=FALSE}    
+```shell      
 git status # should tell you are not in a git repo
 ```   
 
 **Step 6**: Go to GitHub page and copy the Berry Sim Library's HTTPS URL. Then, go the folder you checked in step one and type in to your terminal:    
 
-```{bash, echo = TRUE, eval=FALSE}      
+```shell    
 git clone https://github.com/BerryConsultants/Shared-Trial-Simulation-Library.git
 ```  
 
@@ -92,7 +92,7 @@ Now, you can explore the repository on your local machine!
 **Step 7**: Push your first commit!     
 Add a new file to the repository, named with your initials: e.g. yourinitials.txt.     
 
-```{bash, echo = TRUE, eval=FALSE}    
+```shell        
 cd testcommits # go into the testcommmits directory 
 touch your-file-name # create a new file named yourinitials.txt 
 git add your-file-name # stage your new file using its file name (yourinitials.txt)
