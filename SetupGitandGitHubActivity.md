@@ -3,20 +3,20 @@ layout: page
 title: Set up Git and GitHub, Clone a Repo, and Make a Commit
 description: interactive activity to set up Git and GitGub, useful links
 ---
-
-Previously  
  
 [Section 1: Intro and Git](index.html)   
 
 [Section 2: GitHub, Merging, and Branching](GitHub_Merges_Branches_CodeReview.html)  
 
+--------------------------    
+
 ## Section 3: Set up Git and GitHub, Clone a Repo, and Make a Commit
 
-Today we will clone the Berry Consultants [Shared Simulation Code Library](https://github.com/BerryConsultants/Shared-Trial-Simulation-Library), so that we can start contributing to it!
+Today we'll set up Git, clone a repo, and make our first commits! You'll only need to do steps 1-4 once. After
 
 **Step 1**: If you don't already have one, [create a GitHub account](https://docs.github.com/en/github/getting-started-with-github/signing-up-for-github/signing-up-for-a-new-github-account) and verify your email address.  
 
-**Step 2**: If you haven't done so, email or Slack your user ID to Henrik, Kert, or Pravin so they can add you to the Berry GitHub team.  
+**Step 2**: If you haven't done so, email or Slack your user ID to Henrik, Kert, or Pravin so they can add you to the Berry Consultants GitHub team.  
 
 **Step 3**: Step up Git on your local computer.   
 a) Verify that you have Git version >= 2.0 on your computer 
@@ -35,9 +35,7 @@ git config --global user.name # confirm that it worked correctly
 ```
 
 c) Set your commit email address    
-Find your GitHub noreply email by following [these instructions](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address#setting-your-commit-email-address-on-github).  
-
-Once you have your GitHub noreply email, type into your terminal:   
+First, find your GitHub noreply email by following [these instructions](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address#setting-your-commit-email-address-on-github). Once you have your GitHub noreply email, type into your terminal:   
 
 ```shell    
 git config --global user.email "yournoreplyemail@email.com"
@@ -46,26 +44,21 @@ git config --global user.email # confirm that it worked correctly
 
 **Step 4**: Cache your GitHub credentials in Git.   
 
-a) Test that credential helper is installed   
+a) Test that the credential helper is installed   
 
 ```shell    
 git credential-osxkeychain # test that credential helper is already installed
 > Usage: git credential-osxkeychain <get|store|erase> # good, its installed!
 ```   
 
-If the osxkeychain helper isn't installed, then type `brew install git` into your terminal.  
+If the osxkeychain helper isn't installed, type `brew install git` into your terminal.  
 
-b) After you've confirmed that the credential helper is installed, type into your terminal   
-
+b) After you've confirmed that the credential helper is installed, type:      
 ```shell    
 git config --global credential.helper osxkeychain # tells git to use osxkeychain credential helper
 ```   
 
-c) At the end, you'll need to create a personal access token on GitHub by following [these instructions](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).   
-
-Once you have a token, save it in a safe place (like LastPass or another password manager). You'll use it like a password when performing Git operations over HTTPS.   
-
-For example, on the command line you will enter your GitHub username and token   
+c) Last, create a personal access token on GitHub by following [these instructions](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token). Save it in a safe place (like LastPass or another password manager). You'll use it like a password when performing Git operations over HTTPS like this:   
 
 ```shell    
 $ git clone https://github.com/username/example-repo.git
@@ -73,53 +66,68 @@ Username: your_GitHub_username
 Password: your_token
 ```   
 
-**Now you're ready to clone your first repo!**   
+**Now, Git is set up! You're ready to clone your first repo.**   
 
-**Step 5**: Navigate to the folder where you'd like to keep this repo and make sure it's not already a git repository.   
-
+**Step 5**: Navigate to the folder where you'd like to keep the Berry Simulation Library repo. Make sure it's not already a git repository by typing the following into your terminal:   
 ```shell      
 git status # should tell you are not in a git repo
 ```   
 
-**Step 6**: Go to GitHub page and copy the Berry Sim Library's HTTPS URL. Then, go the folder you checked in step one and type in to your terminal:    
-
+**Step 6**: Type in to your terminal:      
 ```shell    
-git clone https://github.com/BerryConsultants/Shared-Trial-Simulation-Library.git
+git clone https://github.com/BerryConsultants/Shared-Trial-Simulation-Library.git # HTTPS address for this repo
 ```  
-
-Now, you can explore the repository on your local machine!   
+Now, you have a local version of this repo on your machine.    
 
 **Step 7**: Push your first commit!     
-Add a new file to the repository, named with your initials: e.g. yourinitials.txt.     
-
-```shell        
-cd testcommits # go into the testcommmits directory 
+Add a new file to the repository, named with your initials (e.g. yourinitials.txt) by typing the following into your terminal:    
+```shell  
+cd Shared-Trial-Simulation-Library/testcommits/ # move into testcommmits directory 
 touch your-file-name # create a new file named yourinitials.txt 
 git add your-file-name # stage your new file using its file name (yourinitials.txt)
-git status
+git status # check the status of your new file
 git commit -m"pushing my first commit to the Berry Code Library!" # commit with message
 git push # push your additions to the remote repository
 ```   
 
-## Useful Links   
+**Congratulations!** You've set up Git, GitHub, cloned a library, and pushed your first commit to a GitHub repo. You're ready to explore all the great tools Git and GitHub have to offer! Check out [your personal dashboard](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/about-your-personal-dashboard), follow some of your [Berry colleagues](https://github.com/orgs/BerryConsultants/people), or [set up a new repo](https://docs.github.com/en/github/getting-started-with-github/quickstart/create-a-repo).
+
+### Setting up Git, GitHub, and Making your First Commmit: Summary   
+
+- Steps 1-4 only need to be done once on each computer. Now, you're all set!
+
+- To clone a repo, use the command `git clone` followed by the repo's HTTPS address
+
+- Generally, make changes or additions to a repo with the following four commands (in this order):   
+    
+    - `git pull` to get the latest changes from the remote version on GitHub
+    
+    - `git add filename` to stage your updates
+    
+    - `git commmit -m"message here"` to take a snapshot to add to the Git history
+    
+    - `git push` to push your updates to the remote GitHub repository    
+
+
+## Useful Links    
 
 - Set up VSCode as your default Git editor [here](https://stackoverflow.com/questions/30024353/how-to-use-visual-studio-code-as-default-editor-for-git)
  
 - [Git docs](https://git-scm.com/doc)
  
-- [Collaborate with Pull Requests on GitHub](https://docs.github.com/en/github/getting-started-with-github/quickstart/github-flow)
+- Collaborate with [Pull Requests](https://docs.github.com/en/github/getting-started-with-github/quickstart/github-flow)
   
-- [Communicate about projects with Issues, PRs, and team discussions](https://docs.github.com/en/github/getting-started-with-github/quickstart/communicating-on-github)
+- Manage projects with [Issues, PRs, and team discussions](https://docs.github.com/en/github/getting-started-with-github/quickstart/communicating-on-github)
   
-- [More tips for getting started on GitHub](https://docs.github.com/en/github/getting-started-with-github/quickstart)
+- [Getting started on GitHub](https://docs.github.com/en/github/getting-started-with-github/quickstart)
 
-- Today I've shown you how to use GitHub in the terminal, but you can also use [RStudio](https://happygitwithr.com/rstudio-git-github.html) or [GitHub's desktop app](https://desktop.github.com/).
+- This tutorial covers using GitHub through the terminal, but you can also use [RStudio](https://happygitwithr.com/rstudio-git-github.html) or [GitHub's desktop app](https://desktop.github.com/).
 
 - And now that you've caught the GitHub bug, [make your own octocat](https://myoctocat.com/)!
 
 <img src="octocora.png" alt="drawing" width="200"/>
 
-previously  
+--------------------------    
 
 [Section 1: Intro and Git](index.html)    
 

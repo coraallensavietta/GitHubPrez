@@ -20,7 +20,11 @@ description: intro, version control with Git
 
 - [Section 3: Setting up Git and GitHub](SetupGitandGitHubActivity.html)
 
-  - Useful Links
+  - set up Git on your computer
+
+  - clone a repo from GitHub and make your first commit!
+
+  - additional useful links
 
 <img src="octocora.png" alt="drawing" width="200"/>
 
@@ -32,7 +36,7 @@ description: intro, version control with Git
 
 - To look at a previous version of a project and its commit message, check out the previous commit, then come back to the newest version.
 
-- Git helps you take care of your future self: *you'll know exactly which version of your code created that design report!*
+- Git helps you take care of your future self, so you'll know exactly which version of your code created that design report!
 
 Let's create a new project directory and see how git can help us track our changes.   
 
@@ -107,7 +111,7 @@ code . # ignored files are now lighter in VSCode
 **git log**: shows git history, with each commit's SHA (id)    
 **git show SHA**: shows commit's changes and log message    
 
-next
+--------------------------    
 
 [Section 2: GitHub, Merging, and Branching](GitHub_Merges_Branches_CodeReview.html)   
 

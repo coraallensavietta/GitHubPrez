@@ -3,10 +3,11 @@ layout: page
 title: Collaborate and Resolve Conflicts Seamlessly with GitHub
 description: Collaborating, Merging, Branching, and Code Review
 ---
-Previously   
 [Section 1: Intro and Git](index.html)   
 
 [Section 3: Setting up Git and GitHub, Useful Links](SetupGitandGitHubActivity.html)  
+
+--------------------------     
 
 ## Section 2: Collaborate and Resolve Conflicts Seamlessly on GitHub
 One of Git's best features is its ability to create text files that compare two versions of a file. These are called **diffs**. Git creates a **diff** when we compare a current version to one from six months ago. It also create a diff when we compare a version of my current code with Lindsay's code.
@@ -82,7 +83,7 @@ To do this, I'll use [GitHub's pull request process](https://github.com/coraalle
 
 - GitHub's **branching** and **code review** makes code review quick and easy for better, less buggy code!
 
-previously   
+--------------------------    
 
 [Section 1: Intro and Git](index.html)   
 
