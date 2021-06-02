@@ -38,12 +38,12 @@ description: intro, version control with Git
 
 - Git helps you take care of your future self, so you'll know exactly which version of your code created that design report!
 
-Let's create a new project directory and see how git can help us track our changes.   
+Let's create a new project directory and see how Git can help us track our changes.   
 
 ```shell        
 mkdir example-repo # create a new folder
 cd example-repo
-git init # create a git repository
+git init # create a Git repository
 git status
 code readme.md # then make changes to the readme in VSCode
 git add readme.md # stages file
@@ -56,7 +56,7 @@ git add readme.md # add these changes
 git reset # oops! didn't mean to add those
 ```    
 
-Now, you have a git repo!
+Now, you have a Git repo!
 
 ### Control what you track with a Gitignore File   
 
@@ -108,7 +108,7 @@ code . # ignored files are now lighter in VSCode
 **git reset**: unstages changes    
 **git diff**: shows differences in files since last commit   
 **git commit -m"commit message"**: commits stages changes with a message   
-**git log**: shows git history, with each commit's SHA (id)    
+**git log**: shows Git history, with each commit's SHA (id)    
 **git show SHA**: shows commit's changes and log message    
 
 --------------------------    

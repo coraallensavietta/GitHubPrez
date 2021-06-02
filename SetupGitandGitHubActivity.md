@@ -23,7 +23,7 @@ a) Verify that you have Git version >= 2.0 on your computer
 ```shell    
 git --version
 ```   
-If Git is installed, you'll get a message like "git version 2.xx.x (Apple Git-128)". If not, download git [here](https://git-scm.com/downloads).    
+If Git is installed, you'll get a message like "git version 2.xx.x (Apple Git-128)". If not, download Git [here](https://git-scm.com/downloads).    
 
 b) Set your Git username by typing in the terminal:   
 
@@ -52,19 +52,14 @@ b) Tell Git to use osxkeychain credential helper by typing:
 git config --global credential.helper osxkeychain 
 ```   
 
-c) Last, create a personal access token on GitHub by following [these instructions](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token). Save it in a safe place (like LastPass or another password manager). You'll use it like a password when performing Git operations over HTTPS like this:   
-```shell    
-$ git clone https://github.com/username/example-repo.git
-Username: your_GitHub_username
-Password: your_token
-```   
+c) Last, create a personal access token on GitHub by following [these instructions](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token). Save it in a safe place (like LastPass or another password manager). You'll use it like a password when performing Git operations over HTTPS.   
 
 **Git and GitHub are now set up!** Since steps 1-4 only need to be done once on each computer, you won't need to repeat them. Now you're ready to clone your first repo!
 
 **Step 5**: Clone a repo     
 Navigate to the folder where you'd like to keep the Berry Simulation Library repo. Make sure it's not already a git repository by typing the following into the terminal:   
 ```shell      
-git status # should tell you are not in a git repo. if not, move out of the repo
+git status # should tell you are not in a Git repo. if not, move out of the repo
 git clone https://github.com/BerryConsultants/Shared-Trial-Simulation-Library.git # HTTPS address for this repo
 ```  
 You now have a local version of this repo on your machine.    

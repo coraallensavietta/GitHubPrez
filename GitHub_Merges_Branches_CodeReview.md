@@ -23,7 +23,7 @@ git branch -M main # rename main branch
 git push -u origin main # push all of my commits to remote
 ```   
 
-Now, Lindsay and I can collaborate and compare our work using git diffs!   
+Now, Lindsay and I can collaborate and compare our work using Git diffs!   
 
 ### Resolving Conflicts
 First, let's say Lindsay goes in and makes changes to our readme.md file. 
@@ -73,7 +73,7 @@ To do this, I'll use [GitHub's pull request process](https://github.com/coraalle
 
 ### GitHub: Summary    
 
-- Each collaborator has a **local** version git repo on their machine. GitHub stores the **remote** version of each repo. This lets us compare our local files with those stored on GitHub.
+- Each collaborator has a **local** version of the Git repo on their machine. GitHub stores the **remote** version of each repo. This lets us compare our local files with those stored on GitHub.
 
 - To get your changes, collaborators will **pull** your changes from the remote GitHub repo
 
