@@ -118,12 +118,13 @@ code . # ignored files are now lighter in VSCode
 
 
 ### Bonus: Set Up Visual Studio Code  
-To set up VSCode and the `code` command, follow these instructions ([from VSCode docs](https://code.visualstudio.com/docs/editor/versioncontrol#_vs-code-as-git-editor)):   
+To use the `code` command and set Visual Studio Code as your Git editor, follow these instructions (from the [VSCode docs](https://code.visualstudio.com/docs/editor/versioncontrol#_vs-code-as-git-editor)).    
+
 **Step 1:** Download Visual Studio Code [here](https://code.visualstudio.com/download).    
-**Step 2:**     
-  - macOS: From the View menu, select Command Palette. Within the Command Palette, type: Shell Command: Install 'Code' command in path      
-  - Windows: Make sure you selected Add to PATH during the installation.     
-  Linux: Make sure you installed Code via our new .deb or .rpm packages.    
+**Step 2:** Add code command to path.        
+  - **macOS**: From the View menu, select Command Palette. Within the Command Palette, type: Shell Command: Install 'Code' command in path      
+  - **Windows**: Make sure you selected Add to PATH during the installation.    
+  - **Linux**: Make sure you installed Code via our new .deb or .rpm packages.    
     
 **Step 3:** In the terminal, type:    
 ```shell    
