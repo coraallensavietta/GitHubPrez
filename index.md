@@ -42,7 +42,7 @@ description: intro, version control with Git
 
 Let's create a new project directory and see how Git can help us track our changes.   
 
-*note: The `code` command I use below only works if you've set Visual Studio Code as your Git editor. To do that, follow **Bonus: Set Up Visual Studio Code** instructions at the bottom of this page. Otherwise, you can skip lines starting with `code`, replacing them by creating and editing your readme.md file in another text editor.*      
+*note: The `code` command I use below only works if you've set Visual Studio Code as your Git editor. To do so, follow **Bonus: Set Up Visual Studio Code** instructions at the bottom of this page. Otherwise, you can skip lines starting with `code`, replacing them by creating and editing your readme.md file in another text editor.*      
 ```shell        
 mkdir example-repo # create a new folder
 cd example-repo
@@ -118,8 +118,6 @@ code . # ignored files are now lighter in VSCode
 
 
 ### Bonus: Set Up Visual Studio Code  
-The `code` command used in this tutorial only works if you've set up Visual Studio Code on your computer. You can avoid using this command by instead create and open your files using the text editor of your choice (e.g. sublime text, atom, notepad, vim).    
-
 To set up VSCode and the `code` command, follow these instructions ([from VSCode docs](https://code.visualstudio.com/docs/editor/versioncontrol#_vs-code-as-git-editor)):   
 **Step 1:** Download Visual Studio Code [here](https://code.visualstudio.com/download).    
 **Step 2:**     
@@ -127,10 +125,11 @@ To set up VSCode and the `code` command, follow these instructions ([from VSCode
   - Windows: Make sure you selected Add to PATH during the installation.     
   Linux: Make sure you installed Code via our new .deb or .rpm packages.    
     
-**Step 3:** In terminal, type:    
+**Step 3:** In the terminal, type:    
 ```shell    
 git config --global core.editor "code --wait"   
 ```    
+You're all set!   
 
 --------------------------    
 
