@@ -95,10 +95,8 @@ git push # push your additions to the remote repository
 
 
 ## Useful Links    
-
-- Set up VSCode as your default Git editor [here](https://stackoverflow.com/questions/30024353/how-to-use-visual-studio-code-as-default-editor-for-git)
  
-- [Git docs](https://git-scm.com/doc)
+- [Git docs](https://git-scm.com/doc)   
  
 - Collaborate with [Pull Requests](https://docs.github.com/en/github/getting-started-with-github/quickstart/github-flow)
   
