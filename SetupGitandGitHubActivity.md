@@ -45,7 +45,7 @@ a) Test that the credential helper is installed by typing into the terminal:
 ```shell    
 git credential-osxkeychain
 ```   
-If you get a message like "> Usage: git credential-osxkeychain <get|store|erase>", it's installed. If not, type `brew install git` into the terminal.
+If you get a message like "> Usage: git credential-osxkeychain <get|store|erase>", it's installed. If not, type `brew install git` into the terminal. If you don't have homebrew, download it here: https://brew.sh/, then type `brew install git` into the terminal.
 
 b) Tell Git to use osxkeychain credential helper by typing:          
 ```shell    
