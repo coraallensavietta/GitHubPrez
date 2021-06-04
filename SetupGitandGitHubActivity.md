@@ -67,7 +67,7 @@ You now have a local version of this repo on your machine.
 **Step 6**: Push your first commit!     
 Add a new file to the repository, named with your initials (e.g. yourinitials.txt) by typing the following into the terminal:    
 ```shell  
-cd Shared-Trial-Simulation-Library/testcommits/ # move into testcommmits directory 
+cd Shared-Trial-Simulation-Library/testcommits/ # move into testcommits directory 
 touch your-file-name # create a new file named yourinitials.txt 
 git add your-file-name # stage your new file using its file name (yourinitials.txt)
 git status # check the status of your new file
@@ -77,7 +77,7 @@ git push # push your additions to the remote repository
 
 **Congratulations!** You've set up Git, GitHub, cloned a library, and pushed your first commit to a GitHub repo. You're ready to explore all the great tools Git and GitHub have to offer! Check out [your personal dashboard](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/managing-user-account-settings/about-your-personal-dashboard), follow some of your [Berry colleagues](https://github.com/orgs/BerryConsultants/people), or [create a new repo](https://docs.github.com/en/github/getting-started-with-github/quickstart/create-a-repo).
 
-### Setting up Git, GitHub, and Making your First Commmit: Summary   
+### Setting up Git, GitHub, and Making your First Commit: Summary   
 
 - Steps 1-4 only need to be done once on each computer. Once you're completed them, you're all set!
 
@@ -89,7 +89,7 @@ git push # push your additions to the remote repository
     
     - `git add filename` to stage your updates
     
-    - `git commmit -m"message here"` to take a snapshot to add to the Git history
+    - `git commit -m"message here"` to take a snapshot to add to the Git history
     
     - `git push` to push your updates to the remote GitHub repository    
 
