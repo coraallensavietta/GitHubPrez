@@ -40,12 +40,12 @@ git config --global user.email "yournoreplyemail@email.com"
 git config --global user.email # to confirm that it worked correctly
 ```
 
-**Step 4**: Cache your GitHub credentials in Git.   
+**Step 4**: Cache your GitHub credentials in Git (more detailed instructions [here](https://docs.github.com/en/github/getting-started-with-github/getting-started-with-git/caching-your-github-credentials-in-git)).   
 a) Test that the credential helper is installed by typing into the terminal:   
 ```shell    
 git credential-osxkeychain
 ```   
-If you get a message like "> Usage: git credential-osxkeychain <get|store|erase>", it's installed. If not, type `brew install git` into the terminal. If you don't have homebrew, download it here: https://brew.sh/, then type `brew install git` into the terminal.
+If you get a message like "> Usage: git credential-osxkeychain <get|store|erase>", it's installed. If not, type `brew install git` into the terminal. If you don't have homebrew, install it at https://brew.sh/, then type `brew install git` into the terminal.
 
 b) Tell Git to use osxkeychain credential helper by typing:          
 ```shell    
